@@ -504,6 +504,8 @@ struct Manager {
         RateLimit dump_ratelimit;
 
         sd_event_source *memory_pressure_event_source;
+        /* Rate limit for the manager event loop */
+        RateLimit event_loop_ratelimit;
 
         /* For NFTSet= */
         FirewallContext *fw_ctx;
